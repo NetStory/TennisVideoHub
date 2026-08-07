@@ -32,3 +32,44 @@ Why:
 Iteration-01 done. 2026-08-07
 
 ---
+
+# Iteration-02
+
+## Observation
+
+当前目标及意义：
+1. 定义出models.py，意义是确定videos核心业务所需要的数据结构
+
+当前情况：
+1. 网站地基已建好
+2. 根据教程P3，现在要做的事情是定义models.py，也就是定义模型。
+
+当前卡点：
+1. 我不知道我应该怎么把我这个应用都需要哪些模型找出来你懂吗，我不知要要遵循什么步骤才能把需要什么模型找出来，完全不知道
+
+## Decision
+
+调查出 设计出一个应用的models.py 需要经历哪些步骤
+
+## Deliverable
+
+设计models.py 所需要的步骤(v1.0)：
+
+1. 写出主要用户故事（目前只需要上传）
+2. 从用户故事中抽取名词（Video、User、Comment、Tag等等）
+3. 为每个实体列出核心属性（title, file, duration, status类似的）
+4. 标记出实体之间的关系（一对多，多对多等等）
+5. 产出模型草案 videos/models_design.md
+6. 通过评审
+7. 实现videos/models.py
+8. Django迁移
+
+## Review & Next Step
+
+今天的工作主要是定下了设计models.py SOP（Standard Operation Protocol）的第一版，也就是到底要怎么一步步把models.py真正设计和最后实现出来。
+
+下一步会是写出主要用户故事。
+
+Iteration-02 done. 2026-08-07
+
+---
