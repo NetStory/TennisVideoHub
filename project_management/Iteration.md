@@ -115,3 +115,32 @@ TennisVideoHub-上传功能用户故事v1.0：
 Iteration-03 done. 2026-08-10
 
 ---
+
+# Iteration-04
+
+status now: open
+
+## Observation
+
+当前目标及意义：
+1. 定义出models.py，意义是确定videos核心业务所需要的数据结构
+
+当前情况：
+1. 已经写出用户故事，及其上传视频所需要的基本信息明细
+
+当前卡点：
+我们需要写出一个关于用户故事中名词的文档，具体参考 Iteration-02: 从用户故事中抽取名词（Video、User、Comment、Tag等等）
+
+## Decision
+
+JLZ和THN各自写出一个用户故事的名词抽取报告，以供之后合并
+
+## Deliverable
+
+JLZ：
+- [ ] docs/user_story_noun_analysis_jlz.md
+
+THN:
+- [ ] docs/user_story_noun_analysis_thn.md
+
+
