@@ -138,9 +138,81 @@ JLZ和THN各自写出一个用户故事的名词抽取报告，以供之后合�
 ## Deliverable
 
 JLZ：
-- [ ] docs/user_story_noun_analysis_jlz.md
+- [x] $root/docs/user_story_noun_analysis_jlz.md
 
 THN:
-- [ ] docs/user_story_noun_analysis_thn.md
+- [x] $root/docs/user_story_noun_analysis_thn.md
 
 
+Iteration-04 done. 2026-08-12
+
+---
+
+# Iteration-05
+
+## Observation
+
+当前目标及意义：
+1. 定义出models.py，意义是确定videos核心业务所需要的数据结构
+
+当前情况：
+目前THN和JLZ已完成各自user_story_noun_analysis
+
+当前卡点：
+这个提取名词的步骤有点太宽泛了 到底要提取什么名词？难道是个名词就要提取吗？
+
+## Judge
+
+设计models.py 所需要的步骤(v1.0) 的 第二步 和 第三步之间 差了一步，也就是：
+
+> 判断提取出来的概念中，哪些是真正的实体。
+
+## Decision
+
+1. 更新 设计models.py 所需要的步骤 协议 至 v1.1
+2. 给出业务概念分类表
+3. 给出业务概念表清单模板
+
+## Deliverable
+
+设计 models.py 所需要的步骤(v1.1)：
+
+1. 写出主要用户故事（目前只需要上传）
+2. 从用户故事中提取**业务概念** 
+3. 对业务概念进行分类，区分实体、属性、关系、枚举值、动作和上下文，确定业务概念表清单
+4. 为每个实体列出核心属性，并确定字段类型、必填性、默认值和验证规则
+    - 实体判断标准：这个东西要不要在数据库中拥有属于自己的“一行记录”？
+5. 标记实体之间的关系（一对一、一对多、多对多）
+6. 产出模型草案 `videos/models_design.md`
+7. 通过评审
+8. 实现 `videos/models.py`
+9. 创建并执行 Django 迁移
+
+业务概念分类表(v1.0)：
+
+| 分类 | 含义 | 常见实现 |
+|---|---|---|
+| 实体 | 需要独立保存和管理的对象 | Django Model |
+| 属性 | 用来描述某个实体的信息 | Model Field |
+| 关系 | 一个实体和另一个实体之间的联系 | `ForeignKey`、`ManyToManyField` |
+| 枚举值 | 某个属性可以选择的有限选项 | `TextChoices` |
+| 动作 | 用户或系统执行的操作 | View、Service、业务逻辑 |
+| 分组或上下文 | 帮助人理解，但不需要存进数据库 | 不实现 |
+
+业务概念表清单模板：
+
+| 业务概念 | 分类 | 原因 |
+
+## Review
+
+之前写出的 user_story_noun_analysis仍然有价值，但是第二步需要重新走一遍：2. 从用户故事中提取业务概念
+
+这确实会让项目变得更加清楚，这个信息的引入是值得的
+
+## Next
+
+和JLZ通气Iteration-05 对于 设计 models.py 所需要的步骤(v1.1) 的改变，准备升级原名词分析文档为业务概念文档。
+
+Iteration-05 done. 2026-08-12
+
+---
