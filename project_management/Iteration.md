@@ -216,3 +216,35 @@ Iteration-04 done. 2026-08-12
 Iteration-05 done. 2026-08-12
 
 ---
+
+# Iteration-06
+
+## Observation
+
+当前目标及意义：
+1. 定义出models.py，意义是确定videos核心业务所需要的数据结构
+
+当前情况：
+需要写出业务概念表
+
+## Deliverable
+
+- [ ] docs/business_concepts_sheet_jlz.md
+- [ ] docs/business_concepts_sheet_thn.md
+
+参考信息：
+
+业务概念分类表(v1.0)：
+
+| 分类 | 含义 | 常见实现 |
+|---|---|---|
+| 实体 | 需要独立保存和管理的对象 | Django Model |
+| 属性 | 用来描述某个实体的信息 | Model Field |
+| 关系 | 一个实体和另一个实体之间的联系 | `ForeignKey`、`ManyToManyField` |
+| 枚举值 | 某个属性可以选择的有限选项 | `TextChoices` |
+| 动作 | 用户或系统执行的操作 | View、Service、业务逻辑 |
+| 分组或上下文 | 帮助人理解，但不需要存进数据库 | 不实现 |
+
+业务概念表清单模板：
+
+| 业务概念 | 分类 | 原因 |
