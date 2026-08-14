@@ -229,8 +229,8 @@ Iteration-05 done. 2026-08-12
 
 ## Deliverable
 
-- [ ] docs/business_concepts_sheet_jlz.md
-- [ ] docs/business_concepts_sheet_thn.md
+- [x] docs/business_concepts_sheet_jlz.md
+- [x] docs/business_concepts_sheet_thn.md
 
 参考信息：
 
@@ -248,3 +248,36 @@ Iteration-05 done. 2026-08-12
 业务概念表清单模板：
 
 | 业务概念 | 分类 | 原因 |
+
+## Review
+
+- [x] docs/business_concepts_sheet_jlz.md
+- [x] docs/business_concepts_sheet_thn.md
+
+撰写过程中完善了上传用户故事，现在上传功能用户故事如下：
+
+TennisVideoHub-上传功能用户故事v1.1：
+
+作为已登录用户，我希望能上传一个网球视频，并且填写关于这个视频的基本信息，从而能够在网站中保存和观看该视频。
+
+其中基本信息包括：
+1. 场上人数（视频画面中切实参与击球的人数，数字框）
+2. 相机是否晃动（拍摄过程中只要不是固定视角，稍微晃动也算晃动，是或否）
+3. 视角（单选，地板视角，支架视角，高位摄像机视角）
+4. 标签（拉球，比赛，多球练习，目前就这三个，我希望这个之后我还可以扩展）
+
+标签包含标签名称。一个网球视频可以有多个标签，一个标签也可以属于多个网球视频。标签目前包括拉球、比赛和多球练习，之后还可以扩展。
+
+## Next
+
+下一步将是：
+
+先meeting同步出共同认可的busineess concept sheet， 然后准备进行如下步骤：
+
+4. 为每个实体列出核心属性，并确定字段类型、必填性、默认值和验证规则
+    - 实体判断标准：这个东西要不要在数据库中拥有属于自己的“一行记录”？
+5. 标记实体之间的关系（一对一、一对多、多对多）
+
+Iteration-06 done. 2026-08-14
+
+---
