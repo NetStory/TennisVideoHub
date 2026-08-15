@@ -272,7 +272,7 @@ TennisVideoHub-上传功能用户故事v1.1：
 
 下一步将是：
 
-先meeting同步出共同认可的busineess concept sheet， 然后准备进行如下步骤：
+先meeting同步出共同认可的busineess concepts list， 然后准备进行如下步骤：
 
 4. 为每个实体列出核心属性，并确定字段类型、必填性、默认值和验证规则
     - 实体判断标准：这个东西要不要在数据库中拥有属于自己的“一行记录”？
@@ -281,3 +281,80 @@ TennisVideoHub-上传功能用户故事v1.1：
 Iteration-06 done. 2026-08-14
 
 ---
+
+# Iteration-07
+
+## Observation
+
+-
+
+## Deliverable
+
+共同确定了 docs/business_concept_list.
+
+
+## Next
+
+进行如下步骤：
+
+4. 为每个实体列出核心属性，并确定字段类型、必填性、默认值和验证规则
+    - 实体判断标准：这个东西要不要在数据库中拥有属于自己的“一行记录”？
+5. 标记实体之间的关系（一对一、一对多、多对多）
+
+分别产出
+- 实体字段规格表
+
+- 实体关系表
+    - 包括简单ER图
+
+Iteration-07 done. 2026-08-15
+
+---
+
+# Iteration-08
+
+## Decision
+
+理解、检查、改进、批准GPT给出的实体字段规格表。
+
+## Deliverable
+
+- [x] docs/实体字段规格表.md
+- [X] docs/实体关系表.md
+
+## Review
+
+敲定了如下内容：
+
+- [x] docs/实体字段规格表.md
+- [X] docs/实体关系表.md
+
+## Next
+
+下一步是：6. 产出模型草案 `videos/models_design.md`
+
+需要规定产出模型草案的模板
+
+Iteration-08 done. 2026-08-15
+
+---
+
+# Iteration-09
+
+## Observation
+
+目前已经确认了实体字段规格表和实体关系表，可以开始写 model_design.md了，但是我们目前不知道写这个东西要包含什么，也就是不知道 model_design.md的模板该是啥样的
+
+## Decision
+
+让 JLZ 去调查以下 model_design.md 应该包含哪些内容，并且整理出一个model_design.md的模板
+
+## Deliverable
+ 
+- [ ] docs/model_design_template.md -> JLZ
+
+## Status
+
+Open
+
+

@@ -1,0 +1,39 @@
+@startuml
+
+left to right direction
+
+hide methods
+hide stereotypes
+
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+
+entity "用户 User" as User {
+    * id : PK
+}
+
+entity "网球视频 Video" as Video {
+    * id : PK
+    --
+    * uploaded_by_id : FK
+}
+
+entity "标签 Tag" as Tag {
+    * id : PK
+    --
+    * name : UNIQUE
+}
+
+User ||--o{ Video
+Video }o--o{ Tag
+
+legend bottom
+  |= 关系 |= 业务规则 |
+  | User → Video | 一个用户可以上传零个或多个视频；每个视频必须属于一个用户 |
+  | 删除用户 | 用户存在已上传视频时，禁止物理删除（PROTECT） |
+  | Video ↔ Tag | 视频可以拥有零个或多个标签；标签也可以用于零个或多个视频 |
+  | 删除标签关联 | 只删除中间关联记录，不删除视频或标签实体 |
+endlegend
+
+@enduml
