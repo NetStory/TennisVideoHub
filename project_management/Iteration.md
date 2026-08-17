@@ -417,6 +417,8 @@ Iteration-08 done. 2026-08-15
 
 > 已完成 `model_design_template.md` 模板设计，并使用当前 `Video / Tag / User` 实体进行了实际套用验证。模板能够覆盖字段技术设计、关系、枚举、约束、初始数据和 ER 图，并可直接指导后续 `models.py` 实现。
 
+> 对 `model_design_template.md` 进行了二次修改，删除了冗余部分，使模版更加精简。
+
 ## Next
 
 准备根据 model_design_template.md 写出 videos/models.py
