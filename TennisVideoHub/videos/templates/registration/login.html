@@ -1,0 +1,34 @@
+{% extends "videos/base.html" %}
+
+{% block title %}登录 | TennisVideoHub{% endblock %}
+
+{% block content %}
+<section class="card" style="max-width: 560px; margin: 0 auto;">
+    <div class="eyebrow">Account</div>
+    <h1>登录 TennisVideoHub</h1>
+    <p class="lede">登录后，你可以上传并查看自己的网球视频。</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="field">
+            <label for="{{ form.username.id_for_label }}">用户名</label>
+            {{ form.username }}
+            {{ form.username.errors }}
+        </div>
+
+        <div class="field">
+            <label for="{{ form.password.id_for_label }}">密码</label>
+            {{ form.password }}
+            {{ form.password.errors }}
+        </div>
+
+        {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+
+        <div class="actions">
+            <button class="button" type="submit">登录</button>
+        </div>
+    </form>
+</section>
+{% endblock %}

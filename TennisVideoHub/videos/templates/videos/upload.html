@@ -1,0 +1,53 @@
+{% extends "videos/base.html" %}
+
+{% block title %}上传网球视频 | TennisVideoHub{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="eyebrow">BET-001 · Upload</div>
+    <h1>上传一段网球视频</h1>
+    <p class="lede">保存视频和关键拍摄信息。上传成功后，你会直接进入可以播放的视频详情页。</p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="field">
+            <label for="{{ form.file.id_for_label }}">{{ form.file.label }}</label>
+            {{ form.file }}
+            {% if form.file.help_text %}<div class="help">{{ form.file.help_text }}</div>{% endif %}
+            {{ form.file.errors }}
+        </div>
+
+        <div class="field">
+            <label for="{{ form.player_count.id_for_label }}">{{ form.player_count.label }}</label>
+            {{ form.player_count }}
+            {% if form.player_count.help_text %}<div class="help">{{ form.player_count.help_text }}</div>{% endif %}
+            {{ form.player_count.errors }}
+        </div>
+
+        <fieldset class="field choice-list">
+            <legend>{{ form.camera_shaking.label }}</legend>
+            {{ form.camera_shaking }}
+            {{ form.camera_shaking.errors }}
+        </fieldset>
+
+        <fieldset class="field choice-list">
+            <legend>{{ form.viewpoint.label }}</legend>
+            {{ form.viewpoint }}
+            {{ form.viewpoint.errors }}
+        </fieldset>
+
+        <fieldset class="field choice-list">
+            <legend>{{ form.tags.label }}</legend>
+            {{ form.tags }}
+            {% if form.tags.help_text %}<div class="help">{{ form.tags.help_text }}</div>{% endif %}
+            {{ form.tags.errors }}
+        </fieldset>
+
+        <div class="actions">
+            <button class="button" type="submit">上传并保存</button>
+        </div>
+    </form>
+</section>
+{% endblock %}

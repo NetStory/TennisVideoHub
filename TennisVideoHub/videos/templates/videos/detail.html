@@ -1,0 +1,45 @@
+{% extends "videos/base.html" %}
+
+{% block title %}视频 #{{ video.pk }} | TennisVideoHub{% endblock %}
+
+{% block content %}
+<section class="card">
+    <div class="eyebrow">Uploaded · Video #{{ video.pk }}</div>
+    <h1>视频已保存</h1>
+    <p class="lede">这段视频和填写的信息已经归属于 {{ video.uploaded_by.username }}。</p>
+
+    <video controls preload="metadata">
+        <source src="{{ video.file.url }}" type="video/mp4">
+        你的浏览器无法播放这个视频。
+    </video>
+
+    <div class="meta">
+        <div class="meta-item">
+            <div class="meta-label">场上人数</div>
+            <div class="meta-value">{{ video.player_count }}</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">相机是否晃动</div>
+            <div class="meta-value">{{ video.camera_shaking|yesno:"是,否" }}</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">拍摄视角</div>
+            <div class="meta-value">{{ video.get_viewpoint_display }}</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">标签</div>
+            <div class="meta-value">
+                {% for tag in video.tags.all %}
+                    {{ tag.name }}{% if not forloop.last %}、{% endif %}
+                {% empty %}
+                    未选择
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <a class="button" href="{% url 'videos:upload' %}">继续上传</a>
+    </div>
+</section>
+{% endblock %}
